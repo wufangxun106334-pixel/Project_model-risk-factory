@@ -37,8 +37,8 @@ In short, the v3 candidate is delivered and its final acceptance is BLOCKED.
 ### Install
 
 ```bash
-git clone https://github.com/wufangxun106334-pixel/model-risk-factory.git
-cd model-risk-factory
+git clone https://github.com/wufangxun106334-pixel/Project_model-risk-factory.git
+cd Project_model-risk-factory
 python3 -m venv .venv && source .venv/bin/activate
 python -m pip install -r requirements.txt -r requirements-ui.txt
 

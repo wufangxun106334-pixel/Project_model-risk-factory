@@ -460,7 +460,7 @@ http://localhost:8501/?root=runs&run=v2-20261112T150753Z-7b6cc549&page=4
 - [ ] 笔记本充满电，带充电器、HDMI / USB-C 转接头
 - [ ] 正装
 - [ ] 决赛版 PPT `Doc/Model_Risk_Factory_Grand_Finale.pptx`（本地 + U 盘 + 云端各一份，封面已加队名）
-- [ ] GitHub repo 可以打开：github.com/wufangxun106334-pixel/model-risk-factory
+- [ ] GitHub repo 可以打开：github.com/wufangxun106334-pixel/Project_model-risk-factory
 - [ ] `Doc/demo_video.mp4` 本地可以播放（备用）
 - [ ] Streamlit 已提前启动，4 个 tab 已打开，浏览器已放大
 - [ ] Demo 完整测过（断网也能跑 REPLAY）
