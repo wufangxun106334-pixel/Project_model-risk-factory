@@ -148,7 +148,7 @@ English key lines：
 - 五个阶段对应 brief 的建议流程：**Discover → Document → Redevelop → Validate → Monitor**。
 - **三种角色严格分开**：
   - **Agent**（LLM，经 OpenAI-compatible gateway，默认 `deepseek-v4.1-flash`，tool-calling，每轮最多 8 次请求）只做三件事：抽取 model inventory、写 Python migration candidate（首次生成 + 最多 2 次 repair）、解释报告。
-  - **Deterministic code**：human-written trusted validator、metrics 计算、report 渲染。Agent 写的代码它一行都不 import。
+  - **Deterministic code**：fixed trusted validator（run 之前冻结，产品内 Agent 不写也不改）、metrics 计算、report 渲染。Agent 写的代码它一行都不 import。
   - **Human**：三个 hash-bound gates。**Gate A** 批 inventory 的 SHA-256；**Gate B** 在 candidate 运行**之前**批它源码的 SHA-256；**Gate C** 批 report manifest 的 SHA-256。src、config 或 candidate 任何一处改动都会让已批准的 gate 失效。
 - **Hard boundary**：Holdout 的输入和答案永远不进 Agent context，Agent 只能看到 aggregate metrics。
 
@@ -358,7 +358,7 @@ http://localhost:8501/?root=runs&run=v2-20261112T150753Z-7b6cc549&page=4
 
 **Q7. "How do you know the validator isn't just passing everything?"**
 - 要点：mutation test，把 `delay_1` 系数改 +0.001 会被抓到；validator 是人写的，从不 import 生成的代码，只比较容器的输出；还有 row-order、column-order 和结构性拒绝的 fixtures。
-- English：*"We attack it. We shift one coefficient by 0.001 and the validator fails it. The validator is human-written and never imports the Agent's code — it only compares outputs."*
+- English：*"We attack it. We shift one coefficient by 0.001 and the validator fails it. The validator is fixed before any run and never imports the Agent's code — it only compares outputs."*
 
 **Q8. "Why not retrain the model in Python?"**
 - 要点：retrain 得到的是另一个模型，需要从头做完整 validation，迁移就失去意义；migration 的目标是 behavioural equivalence，所以复用 R 导出的 coefficients、medians、feature order 和 threshold。
@@ -450,7 +450,7 @@ http://localhost:8501/?root=runs&run=v2-20261112T150753Z-7b6cc549&page=4
 
 **Q27. "Which parts were written by AI?"**
 - 要点：开发时用了 Claude Code 和 Kimi Code CLI 辅助写代码、测试和文档；产品里的 Agent 写 migration candidate、inventories 和报告叙述；**trusted Python reference predictor 和 fixed tests 由人写**；三个 legacy R 模型和旧文档是我们自己做的测试材料。
-- English：*"AI helped us build it, and that's declared. But the trusted reference and the fixed tests — the things that decide pass or fail — are human-written."*
+- English：*"AI helped us build it, and that's declared. The key point is separation: the trusted reference and the fixed tests — the things that decide pass or fail — are fixed before any run and are never written or changed by the in-product Agent."*
 
 ---
 

@@ -178,7 +178,7 @@ Exit codes: `0` means success, `1` means a parity or acceptance failure, and `2`
 ## 6. Data, AI use and limitations
 
 - **Data:** [UCI Default of Credit Card Clients](https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients) (ID 350), CC BY 4.0. The official rules allow public or synthetic data. The raw file is not committed.
-- **AI in the product:** an LLM gateway (default `deepseek-v4.1-flash:1017`) extracts the inventories, writes the candidate and explains the report. The trusted Python reference and all fixed tests are written by people, not by the Agent.
+- **AI in the product:** an LLM gateway (default `deepseek-v4.1-flash:1017`) extracts the inventories, writes the candidate and explains the report. The trusted Python reference and all fixed tests are fixed before any run and are never written or changed by the in-product Agent.
 - **AI in development:** Claude Code and Kimi Code CLI helped with code, tests and documentation.
 - **Validation scope:** the Holdout is a random sample from the same period. Drift is a sensitivity analysis on a weighted resample. A cross-time back-test is not possible on this data and is listed as missing evidence. Fairness results are audit signals, not compliance conclusions.
 - **Out of scope:** SAS ingestion, uploading arbitrary models, MLflow/Azure ML, cloud deployment, automatic PDF generation.
