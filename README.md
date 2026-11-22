@@ -147,16 +147,9 @@ A formal run uses `init-run --mode uci` from a clean commit. `download-uci` and 
 
 ## 4. Deliverables
 
-| Material | File |
-| --- | --- |
-| Solution overview (submission template) | [Doc/Overview.pdf](Doc/Overview.pdf) |
-| Solution deck | [Doc/solution_deck.pdf](Doc/solution_deck.pdf) |
-| Demo video (1:51, English narration with captions, synthetic replay) | [Doc/demo_video.mp4](Doc/demo_video.mp4) |
-| Architecture diagram | [Doc/architecture.png](Doc/architecture.png) |
-| Responsible AI note | [Doc/responsible_note.pdf](Doc/responsible_note.pdf) |
-| Official challenge brief and data-use basis | [docs/official/](docs/official/) |
+The solution overview, solution deck, demo video (1:51, English narration with captions, synthetic replay), architecture diagram, Responsible AI note, and the official challenge brief with the data-use basis are not stored in this repository.
 
-The same package is shared on Google Drive: https://drive.google.com/drive/folders/1GQCx5Ga9PPDK9tbbCBb1uA5KV8qI5pIK
+They are shared on Google Drive: https://drive.google.com/drive/folders/1GQCx5Ga9PPDK9tbbCBb1uA5KV8qI5pIK
 
 ## 5. Repository layout
 

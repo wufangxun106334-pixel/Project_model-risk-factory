@@ -15,12 +15,7 @@ delivery/
 dev_runs/
 dev_runs-*/
 runs/
-# Filled submission deck: generated locally by materials/build_submission_template.py, not committed
-materials/EXL_UCD_Submission_Challenge04.pptx
-materials/EXL_UCD_Submission_Challenge04.pdf
-
-# 11-13: internal working documents stay local, not published
-docs/*
-!docs/official/
-# materials/ = local working sources; published deliverables live in Doc/ (same as the Google Drive package)
-materials/*
+# 11-22: all documents (deliverables, deck, finale prep) stay local in Doc/; the package is shared on Google Drive
+Doc/
+docs/
+materials/
